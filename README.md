@@ -13,5 +13,6 @@ Error Handling:              Handles divide-by-zero and invalid input scenarios 
 
 How to Use
 Open the Calculator Website in your browser.
+https://kevinjose102.github.io/Calculator/
 Enter numbers and select operations using the calculator buttons.
 The result will be displayed on the screen.
