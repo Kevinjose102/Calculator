@@ -5,7 +5,7 @@
 html{
     width: 100vw;
     height: 100vh;
-    background-color: rgb(255, 228, 193);
+    background-color: #1f1f1f;
 }
 
 body{
@@ -16,7 +16,8 @@ body{
     padding: 0;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 100px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -34,39 +35,56 @@ body{
 button{
     width: 70px;
     height: 70px;
-    font-size: 27px;
-    border: 2px solid rgb(143, 118, 83);
+    font-size: 33px;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 9px;
-    background-color: rgb(255, 241, 222);
-    transition: all ease 0.16s;
+    background-color: rgb(126, 126, 126);
+    transition: all ease-in-out 0.19s;
     font-weight: bold;
-    color: rgb(101, 68, 31);
+    color: rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.68) 2.4px 2.4px 3.2px;
 }
 
 button:hover{
-    background-color: rgb(208, 184, 147);
+    background-color: rgb(75, 199, 168);
     cursor: pointer;
-    border: 2px solid rgba(68, 62, 62, 0.6);
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
 }
 
 button:active{
+    border: 2px solid rgba(0, 0, 0, 0.6);
     cursor: default;
-    background-color: rgb(255, 241, 222);
+    background-color: rgb(255, 255, 255);
 }
-
+.clear{
+    background-color: rgba(231, 36, 36, 0.556);
+}
+.clear:hover{
+    background-color: rgba(231, 36, 36, 0.556);
+}
+.operator, .equalto{
+    color: rgb(255, 188, 3);
+}
 .display-screen{
-    background-color: rgb(255, 243, 2217);
-    border: 2px solid rgb(90, 73, 50);
-    color: rgb(101, 68, 31);
-    width: 100%;
+    background-color: rgb(228, 228, 228);
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    width: 307.778px;
     height: 100px;
     font-size: 50px;
+    font-weight: bold;
     padding: 20px;
     margin: 0;
     text-align: right;
     border-radius: 9px;
+    max-width: 307.778px;
+    word-wrap: break-word;
+    white-space: normal;
+    height: auto;
+    overflow: hidden;
+    max-height: 200px;
 }
-
 .calculator{
     display: flex;
     align-items: center;
@@ -75,7 +93,33 @@ button:active{
     padding: 20px;
     border-radius: 20px;
     flex-direction: column;
-    border: 4px solid rgb(152, 124, 87);
-    background-color: rgb(237, 204, 161);
-    transform: scale(1.6);
+    border: 4px solid rgb(0, 0, 0);
+    background-color: rgb(68, 68, 68);
+    transform: scale(1.4);
+}
+
+h1{
+    font-size: 65px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 800;
+    color: rgb(53, 53, 53);
+    background-color: #ffbb1d;
+    width: 75%;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.68) 4.4px 4.4px 4.2px;
+}
+
+footer{
+    width: 100%;
+    padding: 13px;
+    text-align: center;
+    font-size: 22px;
+    font-family: monospace;
+    margin: 0;
+    margin-bottom: 25px;
+}
+a{
+    color: white;
 }
