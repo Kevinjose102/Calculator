@@ -69,12 +69,12 @@ button:active{
 
 .calculator{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
     padding: 20px;
     border-radius: 20px;
+    flex-direction: column;
     border: 4px solid rgb(152, 124, 87);
     background-color: rgb(237, 204, 161);
     transform: scale(1.6);
