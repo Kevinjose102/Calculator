@@ -82,7 +82,9 @@ button:active{
     word-wrap: break-word;
     white-space: normal;
     height: auto;
-    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
     max-height: 200px;
 }
 .calculator{
