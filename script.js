@@ -22,6 +22,26 @@ function appendNumber(number){
         clearFull()
     }
     screen.textContent += number
+    screen.setAttribute("style", "background-color: rgba(147, 219, 211, 0.678); \
+                                border: 2px solid rgb(0, 0, 0); \
+                                color: black; \
+                                width: 307.778px; \
+                                height: 100px; \
+                                font-size: 50px; \
+                                font-weight: bold; \
+                                padding: 20px; \
+                                margin: 0; \
+                                text-align: right; \
+                                border-radius: 9px; \
+                                max-width: 307.778px; \
+                                word-wrap: break-word; \
+                                white-space: normal;\
+                                height: auto; \
+                                overflow: scroll; \
+                                overflow-x: hidden; \
+                                scrollbar-width: none; \
+                                max-height: 200px; \
+                                scroll-behavior: smooth;")
 }
 
 function setOperation(operator){
@@ -41,6 +61,26 @@ function setOperation(operator){
 
 function calculate(expression){
     screen.textContent = eval(expression)
+    screen.setAttribute("style", "background-color: rgba(147, 219, 211, 0.678); \
+                                    border: 2px solid rgb(0, 0, 0); \
+                                    color: rgb(23, 15, 83); \
+                                    width: 307.778px; \
+                                    height: 100px; \
+                                    font-size: 50px; \
+                                    font-weight: bold; \
+                                    padding: 20px; \
+                                    margin: 0; \
+                                    text-align: right; \
+                                    border-radius: 9px; \
+                                    max-width: 307.778px; \
+                                    word-wrap: break-word; \
+                                    white-space: normal;\
+                                    height: auto; \
+                                    overflow: scroll; \
+                                    overflow-x: hidden; \
+                                    scrollbar-width: none; \
+                                    max-height: 200px; \
+                                    scroll-behavior: smooth;")
 }
 
 function clear(){

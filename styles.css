@@ -67,9 +67,9 @@ button:active{
     color: rgb(255, 188, 3);
 }
 .display-screen{
-    background-color: rgb(228, 228, 228);
+    background-color: rgba(147, 219, 211, 0.678);
     border: 2px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
+    color: black;
     width: 307.778px;
     height: 100px;
     font-size: 50px;
@@ -84,7 +84,7 @@ button:active{
     height: auto;
     overflow: scroll;
     overflow-x: hidden;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     max-height: 200px;
     scroll-behavior: smooth;
 }
@@ -124,5 +124,13 @@ footer{
     margin-bottom: 25px;
 }
 a{
+    color: white;
+}
+
+a:hover{
+    color: #ffbb1d;
+}
+
+a:active{
     color: white;
 }
