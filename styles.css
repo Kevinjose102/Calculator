@@ -134,3 +134,24 @@ a:hover{
 a:active{
     color: white;
 }
+
+@media only screen and (max-width: 500px){
+    html{
+        overflow: hidden;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    h1{
+        font-size: 50px;
+        width: 90%;
+    }
+    .calculator{
+        transform: scale(0.9);
+    }
+    footer{
+        font-size: 10px;
+    }
+}
