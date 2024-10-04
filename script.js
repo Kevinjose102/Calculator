@@ -1,7 +1,8 @@
 const numbers = document.querySelectorAll(".number")
 const operators = document.querySelectorAll(".operator")
 const clearButton = document.querySelector(".clear")
-const screen = document.querySelector(".display-screen")
+const lastscreen = document.querySelector(".lastScreen")
+const screen = document.querySelector(".current-screen")
 const equalto = document.querySelector(".equalto")
 
 numbers.forEach((button) =>
@@ -12,7 +13,11 @@ operators.forEach((button) =>
     button.addEventListener('click', () => setOperation(button.textContent))
 )
 
-equalto.addEventListener('click', () => calculate(screen.textContent))
+operators.forEach((button) =>
+    button.addEventListener('click', (e) => calculate(e.target))
+)
+
+equalto.addEventListener('click', (e) => calculate(e.target))
 
 clearButton.addEventListener('click', () => clear())
 
@@ -22,36 +27,16 @@ function appendNumber(number){
         clearFull()
     }
     screen.textContent += number
-    screen.setAttribute("style", "background-color: rgba(147, 219, 211, 0.678); \
-                                border: 2px solid rgb(0, 0, 0); \
-                                color: black; \
-                                width: 307.778px; \
-                                height: 100px; \
-                                font-size: 50px; \
-                                font-weight: bold; \
-                                padding: 20px; \
-                                margin: 0; \
-                                text-align: right; \
-                                border-radius: 9px; \
-                                max-width: 307.778px; \
-                                word-wrap: break-word; \
-                                white-space: normal;\
-                                height: auto; \
-                                overflow: scroll; \
-                                overflow-x: hidden; \
-                                scrollbar-width: none; \
-                                max-height: 200px; \
-                                scroll-behavior: smooth;")
 }
 
 function setOperation(operator){
     if(screen.textContent === '0'){
         clear()
     }
-    else if(screen.textContent[screen.textContent.length - 1] == '+' || 
-            screen.textContent[screen.textContent.length - 1] == '-' || 
-            screen.textContent[screen.textContent.length - 1] == '*' || 
-            screen.textContent[screen.textContent.length - 1] == '/'){
+    else if(lastscreen.textContent[lastscreen.textContent.length - 1] == '+' || 
+            lastscreen.textContent[lastscreen.textContent.length - 1] == '-' || 
+            lastscreen.textContent[lastscreen.textContent.length - 1] == '*' || 
+            lastscreen.textContent[lastscreen.textContent.length - 1] == '/'){
                 console.log("nothing")
     }   
     else{
@@ -59,32 +44,63 @@ function setOperation(operator){
     }
 }
 
-function calculate(expression){
-    screen.textContent = eval(expression)
-    screen.setAttribute("style", "background-color: rgba(147, 219, 211, 0.678); \
-                                    border: 2px solid rgb(0, 0, 0); \
-                                    color: rgb(23, 15, 83); \
-                                    width: 307.778px; \
-                                    height: 100px; \
-                                    font-size: 50px; \
-                                    font-weight: bold; \
-                                    padding: 20px; \
-                                    margin: 0; \
-                                    text-align: right; \
-                                    border-radius: 9px; \
-                                    max-width: 307.778px; \
-                                    word-wrap: break-word; \
-                                    white-space: normal;\
-                                    height: auto; \
-                                    overflow: scroll; \
-                                    overflow-x: hidden; \
-                                    scrollbar-width: none; \
-                                    max-height: 200px; \
-                                    scroll-behavior: smooth;")
+function calculate(e){
+    console.log(e)
+    if(lastscreen.textContent == "0"){
+        lastscreen.textContent = screen.textContent
+        screen.textContent = "0"
+    }
+    else{
+        if(lastscreen.textContent[lastscreen.textContent.length - 1] == '+'){
+            lastscreen.textContent = parseInt(screen.textContent) + parseInt(lastscreen.textContent.slice(0,-1))
+            if(e == equalto){
+                screen.textContent = lastscreen.textContent
+                lastscreen.textContent = "0"
+            }
+            else{
+                lastscreen.textContent = lastscreen.textContent + e.textContent
+                screen.textContent = "0"
+            }
+        }
+        else if(lastscreen.textContent[lastscreen.textContent.length - 1] == '-'){
+            lastscreen.textContent = parseInt(lastscreen.textContent.slice(0,-1)) - parseInt(screen.textContent)
+            if(e == equalto){
+                screen.textContent = lastscreen.textContent
+                lastscreen.textContent = "0"
+            }
+            else{
+                lastscreen.textContent = lastscreen.textContent + e.textContent
+                screen.textContent = "0"
+            }
+        }
+        else if(lastscreen.textContent[lastscreen.textContent.length - 1] == '*'){
+            lastscreen.textContent = parseInt(lastscreen.textContent.slice(0,-1)) * parseInt(screen.textContent)
+            if(e == equalto){
+                screen.textContent = lastscreen.textContent
+                lastscreen.textContent = "0"
+            }
+            else{
+                lastscreen.textContent = lastscreen.textContent + e.textContent
+                screen.textContent = "0"
+            }
+        }
+        else if(lastscreen.textContent[lastscreen.textContent.length - 1] == '/'){
+            lastscreen.textContent = parseInt(lastscreen.textContent.slice(0,-1)) / parseInt(screen.textContent)
+            if(e == equalto){
+                screen.textContent = lastscreen.textContent
+                lastscreen.textContent = "0"
+            }
+            else{
+                lastscreen.textContent = lastscreen.textContent + e.textContent
+                screen.textContent = "0"
+            }
+        }
+    }
 }
 
 function clear(){
     screen.textContent = '0'
+    lastscreen.textContent = "0"
 }
 
 function clearFull(){

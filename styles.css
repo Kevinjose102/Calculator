@@ -88,6 +88,12 @@ button:active{
     max-height: 200px;
     scroll-behavior: smooth;
 }
+
+.lastScreen{
+    font-size: 25px;
+    padding-right: 6px;
+}
+
 .calculator{
     display: flex;
     align-items: center;
